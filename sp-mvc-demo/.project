@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>sp-mvc-demo</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
+		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/META-INF</name>
+			<type>2</type>
+			<location>D:/courses/Spring &amp; Hibernate for Beginners (includes Spring Boot)/17. Spring MVC Form Validation - Creating Custom Validation Rules/1/1/WebContent/META-INF</location>
+		</link>
+		<link>
+			<name>WebContent/WEB-INF/.DS_Store</name>
+			<type>1</type>
+			<location>D:/courses/Spring &amp; Hibernate for Beginners (includes Spring Boot)/17. Spring MVC Form Validation - Creating Custom Validation Rules/1/1/WebContent/WEB-INF/.DS_Store</location>
+		</link>
+		<link>
+			<name>WebContent/WEB-INF/spring-mvc-demo-servlet.xml</name>
+			<type>1</type>
+			<location>D:/courses/Spring &amp; Hibernate for Beginners (includes Spring Boot)/17. Spring MVC Form Validation - Creating Custom Validation Rules/1/1/WebContent/WEB-INF/spring-mvc-demo-servlet.xml</location>
+		</link>
+		<link>
+			<name>WebContent/WEB-INF/view</name>
+			<type>2</type>
+			<location>D:/courses/Spring &amp; Hibernate for Beginners (includes Spring Boot)/17. Spring MVC Form Validation - Creating Custom Validation Rules/1/1/WebContent/WEB-INF/view</location>
+		</link>
+		<link>
+			<name>WebContent/WEB-INF/web.xml</name>
+			<type>1</type>
+			<location>D:/courses/Spring &amp; Hibernate for Beginners (includes Spring Boot)/17. Spring MVC Form Validation - Creating Custom Validation Rules/1/1/WebContent/WEB-INF/web.xml</location>
+		</link>
+	</linkedResources>
+</projectDescription>
