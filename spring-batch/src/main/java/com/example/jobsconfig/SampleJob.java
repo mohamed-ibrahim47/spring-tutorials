@@ -31,6 +31,7 @@ import org.springframework.batch.item.xml.StaxEventItemReader;
 import org.springframework.batch.item.xml.StaxEventItemWriter;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -85,18 +86,12 @@ public class SampleJob {
 	private StudentService studentService;
 	@Autowired
 	private SkipListener skipListener;
-	@Bean
-	@Primary
-	@ConfigurationProperties(prefix = "spring.datasource")
-	public DataSource datasource() {
-		return DataSourceBuilder.create().build();
-	}
 
-	@Bean
-	@ConfigurationProperties(prefix = "spring.seconddatasource")
-	public DataSource seconddatasource() {
-		return DataSourceBuilder.create().build();
-	}
+	@Autowired
+	private DataSource dataSource;
+
+	@Autowired
+	private DataSource seconddatasource;
 
 	// tasklet job
 	@Bean
@@ -259,7 +254,7 @@ public class SampleJob {
 		JdbcCursorItemReader<StudentJdbc> jdbcCursorItemReader =
 				new JdbcCursorItemReader<StudentJdbc>();
 
-		jdbcCursorItemReader.setDataSource(seconddatasource());
+		jdbcCursorItemReader.setDataSource(dataSource);
 		jdbcCursorItemReader.setSql(
 				"select id, first_name as firstName, last_name as lastName,"
 						+ "email from student");
@@ -358,7 +353,7 @@ public class SampleJob {
 		JdbcBatchItemWriter<StudentCsv> jdbcBatchItemWriter =
 				new JdbcBatchItemWriter<StudentCsv>();
 
-		jdbcBatchItemWriter.setDataSource(seconddatasource());
+		jdbcBatchItemWriter.setDataSource(seconddatasource);
 		jdbcBatchItemWriter.setSql(
 				"insert into student(id, first_name, last_name, email) "
 						+ "values (:id, :firstName, :lastName, :email)");
@@ -374,7 +369,7 @@ public class SampleJob {
 		JdbcBatchItemWriter<StudentCsv> jdbcBatchItemWriter =
 				new JdbcBatchItemWriter<StudentCsv>();
 
-		jdbcBatchItemWriter.setDataSource(seconddatasource());
+		jdbcBatchItemWriter.setDataSource(seconddatasource);
 		jdbcBatchItemWriter.setSql(
 				"insert into student(id, first_name, last_name, email) "
 						+ "values (?,?,?,?)");
